@@ -41,4 +41,4 @@ for (i = 0; i < numbers.length; i++) {
 }
 
 // stampo in pagina
-targetElement.innerHTML = `<p class"fs-1">La somma dei numeri che hai digitato è ${sum}.</p>`;
+targetElement.innerHTML = `<p class="fs-1">La somma dei numeri che hai digitato è ${sum}.</p>`;
