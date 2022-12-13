@@ -12,8 +12,23 @@
       crossorigin="anonymous"
     />
     <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <title>SNACK 2</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <section class="container text-center mt-5">
+        <h1 class="mb-4">VEDIAMO SE SEI IN LISTA</h1>
+        <form>
+          <label for="user-name" class="fs-3">Inserisci il tuo nome:</label>
+          <input type="text" id="user-name" />
+          <button type="button" id="check-button" class="btn btn-primary">
+            CHECK!
+          </button>
+          <input type="reset" value="Tenta di nuovo" class="btn btn-danger" />
+        </form>
+        <div id="result" class="fs-1 my-5">SMAMMA! NON SEI IN LISTA</div>
+      </section>
+    </main>
+  </body>
 </html>
