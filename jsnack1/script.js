@@ -15,7 +15,7 @@ Il software deve chiedere per 10 volte all’utente di inserire un numero. (qui 
 */
 
 // prendo l'elemento dal DOM
-targetElement = document.getElementById("target");
+const targetElement = document.getElementById("target");
 
 // creo un array per immagazzinare i numeri
 const numbers = [];
@@ -30,3 +30,15 @@ for (i = 0; numbers.length < 10; i++) {
     console.log(numbers);
   }
 }
+
+// calcolo la somma dei numeri
+
+let sum = 0;
+
+for (i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+  console.log(sum);
+}
+
+// stampo in pagina
+targetElement.innerHTML = `<p class"fs-1">La somma dei numeri che hai digitato è ${sum}.</p>`;
