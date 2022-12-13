@@ -8,11 +8,11 @@ comunicagli se può partecipare o no alla festa. (vietato usare includes() ).
 1- prendo gli elementi dal DOM
 2- invento una lista di nomi (array)
 3- tramite form, chiedo all'utente di scrivere un nome
-4- creo una flag per la validazione
 4- aggingo event listener al bottone
 5- prendo il value del nome
-6- controllo se il nome è nella lista
-7- stampo a schermo se il nome è presente o meno nella mia lista
+6- creo una flag per la validazione
+7- controllo se il nome è nella lista
+8- stampo a schermo se il nome è presente o meno nella mia lista
 */
 
 //------------------------------------------------------------------
@@ -37,6 +37,30 @@ const nameList = [
 
 // tramite form, chiedo all'utente di scrivere un nome (in HTML)
 
-// creo una flag per la validazione
+// aggiungo event listener al bottone
 
-let isAllowed = false;
+inputButton.addEventListener("click", function () {
+  // prendo il value del nome
+  const userName = inputName.value.trim();
+  // validazione
+  if (!userName) {
+    result.innerHTML = `<h2 class="text-danger">Non hai inserito un nome!</h2>`;
+    return;
+  }
+
+  // creo una flag per la validazione
+
+  let isAllowed = false;
+
+  // controllo se il nome è nella lista
+  for (let i = 0; i < nameList.length && !isAllowed; i++) {
+    console.log(nameList[i], userName);
+    if (userName === nameList[i]) {
+      isAllowed = true;
+    }
+  }
+
+  result.innerHTML = isAllowed
+    ? `<h2 class="text-success">Puoi entrare!</h2>`
+    : `<h2 class="text-danger">Smamma! Non sei in lista.</h2>`;
+});
